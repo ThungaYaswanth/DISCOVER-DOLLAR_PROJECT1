@@ -1,0 +1,15 @@
+---
+version: "3.9"
+services:
+  frontend:
+    image: yourdockerhubusername/frontend:latest
+    ports:
+      - "80:80"
+    restart: always
+
+  backend:
+    image: yourdockerhubusername/backend:latest
+    ports:
+      - "5000:5000"
+    restart: always
+...
