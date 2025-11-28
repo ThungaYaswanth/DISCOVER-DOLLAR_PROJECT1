@@ -1,0 +1,33 @@
+---
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:6.0
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: myappdb
+    ports:
+      - "27017:27017"
+
+  backend:
+    image: yourdockerhubusername/backend:latest
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/myappdb
+    depends_on:
+      - mongo
+
+  frontend:
+    image: yourdockerhubusername/frontend:latest
+    restart: always
+    ports:
+      - "80:80"
+
+volumes:
+  mongo-data:
+...
