@@ -1,13 +1,13 @@
 ---
 services:
   frontend:
-    image: your-dockerhub-frontend
+    image: yaswanth640-dockerhub-frontend
     container_name: frontend
     ports:
       - "5173:5173"
 
   backend:
-    image: your-dockerhub-backend
+    image: yaswanth640-dockerhub-backend
     container_name: backend
     ports:
       - "5000:5000"
