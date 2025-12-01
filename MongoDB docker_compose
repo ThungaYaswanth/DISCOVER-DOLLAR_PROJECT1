@@ -13,7 +13,7 @@ services:
       - "27017:27017"
 
   backend:
-    image: yourdockerhubusername/backend:latest
+    image: yaswanth640/backend:latest
     restart: always
     ports:
       - "5000:5000"
@@ -23,7 +23,7 @@ services:
       - mongo
 
   frontend:
-    image: yourdockerhubusername/frontend:latest
+    image: yaswanth640/frontend:latest
     restart: always
     ports:
       - "80:80"
